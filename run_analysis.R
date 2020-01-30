@@ -4,6 +4,11 @@
 
 #1. Read and Merge data
 
+if (!file.exists("UCI HAR Dataset")) { 
+  fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+  download.file(fileURL, filename, method="curl")
+  unzip(filename) 
+}
 
 #Read training data, labels identifying subjects and activities
 #Read Activity and Subjects as factors for convenience
